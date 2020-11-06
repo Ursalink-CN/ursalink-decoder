@@ -159,9 +159,9 @@ Author:
 function Decoder(bytes, port) {
     var decoded = {};
 
-    if (port === undefined || port !== 85) {
-        decoded.Error = true;
-        return decoded;
+    // accept either no port at all, or port 85
+    if (! (port === undefined || port === 85)) {
+        return null;
     }
 
     decoded.Error = false;
