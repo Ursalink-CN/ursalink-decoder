@@ -77,7 +77,7 @@ function Decoder(bytes, port) {
         }
         // TVOC
         else if (channel_id === 0x08 && channel_type === 0x7D) {
-            decoded.tvoc = readInt16LE(bytes.slice(i, i + 2));
+            decoded.tvoc = readUInt16LE(bytes.slice(i, i + 2));
             i += 2;
         }
         // PRESSURE
